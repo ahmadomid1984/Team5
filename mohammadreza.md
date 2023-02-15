@@ -1,0 +1,1 @@
+Third part is order details and point allocation for each product, this part will be done by me.
