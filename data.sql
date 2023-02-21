@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Feb 21, 2023 at 08:35 AM
+-- Generation Time: Feb 21, 2023 at 09:35 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.19
 
@@ -32,8 +32,7 @@ CREATE TABLE `Customer` (
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `phone` int NOT NULL,
-  `dob` int NOT NULL
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
