@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Feb 21, 2023 at 09:35 AM
+-- Generation Time: Feb 22, 2023 at 07:41 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.19
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `crush`
+-- Database: `coffeecrush`
 --
 
 -- --------------------------------------------------------
@@ -32,8 +32,15 @@ CREATE TABLE `Customer` (
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
+  `cpassword` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `Customer`
+--
+
+INSERT INTO `Customer` (`customerID`, `fname`, `lname`, `email`, `cpassword`) VALUES
+(1, 'katie1', 'lname123', 'katie098', 'katie098');
 
 -- --------------------------------------------------------
 
@@ -118,7 +125,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `Customer`
 --
 ALTER TABLE `Customer`
-  MODIFY `customerID` int NOT NULL AUTO_INCREMENT;
+  MODIFY `customerID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -167,3 +174,4 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+

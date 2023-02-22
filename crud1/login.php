@@ -25,9 +25,10 @@ else if (empty($cpassword)) {
     exit();
 }
 
-$sql="SELECT * FROM crush WHERE email='$email' AND cpassword='$cpassword'";
+$sql="select * from Customer where email='$email' AND cpassword='$cpassword'";
 
-$result=mysqli_query($conn, $sql);
+global $conn;
+$result = mysqli_query($conn, $sql);
 
 if (mysqli_num_rows($result) === 1){
     $row=mysqli_fetch_assoc($result);

@@ -1,14 +1,15 @@
 <?php
 $servername = "db";
-$username = "crush";
-$password = "crush123";
-$dbname = "crush";
+$username = "coffeecrush";
+$password = "coffee123";
+$dbname = "coffeecrush";
 
-// creating connection
-$conn = mysqli_connect ($servername, $username, $password, $dbname);
+// Creating connection
+$conn = new mysqli ($servername, $username, $password, $dbname);
 
-// check the connection
-if (!$conn){
-    echo "connection failed";
+// Checking the connection
+if ($conn -> connect_error){
+    die("connection failed:".$conn->connect_error);
+
 }
 ?>
