@@ -13,7 +13,7 @@ if (isset($_POST['email']) && isset($_POST['cpassword'])){
 }
 }
 
-$email = validate($_POST['email']);
+$email = validate($_POST['email']); 
 $cpassword = validate($_POST['cpassword']);
 
 if(empty($email)){
