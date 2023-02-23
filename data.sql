@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Feb 22, 2023 at 07:41 AM
+-- Generation Time: Feb 23, 2023 at 09:13 AM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.19
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `Customer` (
-  `customerID` int NOT NULL,
+  `id` int NOT NULL,
   `fname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `Customer` (
 -- Dumping data for table `Customer`
 --
 
-INSERT INTO `Customer` (`customerID`, `fname`, `lname`, `email`, `cpassword`) VALUES
+INSERT INTO `Customer` (`id`, `fname`, `lname`, `email`, `cpassword`) VALUES
 (1, 'katie1', 'lname123', 'katie098', 'katie098');
 
 -- --------------------------------------------------------
@@ -91,7 +91,7 @@ CREATE TABLE `payment` (
 -- Indexes for table `Customer`
 --
 ALTER TABLE `Customer`
-  ADD PRIMARY KEY (`customerID`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `menu`
@@ -125,7 +125,7 @@ ALTER TABLE `payment`
 -- AUTO_INCREMENT for table `Customer`
 --
 ALTER TABLE `Customer`
-  MODIFY `customerID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `menu`
@@ -174,4 +174,5 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
 
