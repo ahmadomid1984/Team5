@@ -13,9 +13,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Damion&display=swap" rel="stylesheet">
     <title>Crush Coffee</title>
+    
+    
 </head>
 <body>
     <div class="bg-image"></div>
+    <div class="cart-icon">
+  <span class="cart-body"></span>
+  <span class="cart-handle"></span>
+</div>
+
+    
 
     <header>
         <ul class="topnav">
@@ -24,7 +32,11 @@
             <li class="Coffee"><a href="#">Coffee</a></li>
             <li class="Find"><a href="#">Find US</a></li>
             <li class="About"><a href="#">About US</a></li>
-          </ul>          
+            
+          </ul>
+          
+          
+
     </header>
 
     <section class="sentence">
