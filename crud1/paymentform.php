@@ -137,7 +137,7 @@ if(isset($_POST["submit"])){
     $Payment_Method = $_POST["Payment_Method"];
     $Total_Amount = $_POST["Total_Amount"];
     include "db.php";
-    $sql = "insert into studentinfo(fname,lname,city,groupid)
+    $sql = "insert into payment(Price,Date_Order,Order_ID,Costumer_ID,Payment_Method,Total_Amount)
     
     values('$Price','$Date_Order','$Order_ID','$Costumer_ID',' $Payment_Method',' $Total_Amount')" ;
 
@@ -153,6 +153,9 @@ if(isset($_POST["submit"])){
 
 
 ?>
+
+
+
 
 
 

@@ -186,33 +186,4 @@ ul.topnav {
 	font-family: 'Sansita', sans-serif;
   }
 
-  .cart-icon {
-    position: relative;
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    background-color: #f7f7f7;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .cart-body {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    width: 20px;
-    height: 18px;
-    background-color: #333;
-  }
-  
-  .cart-handle {
-    position: absolute;
-    top: 5px;
-    left: 12px;
-    width: 6px;
-    height: 6px;
-    border-top: 2px solid #333;
-    border-left: 2px solid #333;
-    transform: rotate(45deg);
-  }
   
