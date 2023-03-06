@@ -5,6 +5,9 @@ include '../header.php';
 <head>
 	<title>Payment Page</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </head>
 <body>
 	<style>
@@ -55,15 +58,10 @@ button:hover {
 
 		<label for="payment_method">Payment Method:</label>
 		<select id="payment_method" name="payment_method" required>
-			<option value="paypal">PayPal</option>
 			<option value="stripe">Credit/Debit Card</option>
 			
 		</select><br>
 
-		<div id="paypal_fields" class="payment_fields">
-			<label for="paypal_email">PayPal Email:</label>
-			<input type="email" id="paypal_email" name="paypal_email" required><br>
-		</div>
 
 		<div id="stripe_fields" class="payment_fields">
 			<label for="card_number">Card Number:</label>
