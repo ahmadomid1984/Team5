@@ -179,4 +179,10 @@
             </div>
            </section>
     </section>
-    
+    <!-- Submit button -->
+<form method="post" action="order.php">
+    <button type="submit" name="submit_order" style="background-color: firebrick; color: white; border-radius: 10px; margin: 20px auto; display: grid;"><h1 style="font-family: Sansita;">Submit Order</h2></button>
+</form>
+</body>
+</html>
+<?php include "./footer.php" ?>  
