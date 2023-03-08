@@ -1,6 +1,6 @@
 <?php include "./header.php" ?>
 
-<form action="order.php" method="post">
+<form action="order_confirmation.php" method="post">
 <section>
         <section class="grid-container">
             <div class="container10">
@@ -179,11 +179,40 @@
             </div>
            </section>
     </section>
+    
+    <div style="border: 3px solid white; padding: 30px; width: 40%; display: block; margin: 0 auto; text-align: center; margin-top: 1rem;">
+        <h1 style="color: white; text-align: center; margin-top: 0;">Please Enter Your Information</h1>
+        <label for="customer_name" style="color: white;";></label>
+		<input type="text" name="customer_name" id="customer_name" placeholder="Customer Name" required><br><br>
+        <label for="customer_phone" style="color: white;"></label>
+		<input type="tel" name="customer_phone" id="customer_phone" placeholder="Customer Phone" required><br><br>
+		<label for="customer_address" style="color: white;"></label>
+        <textarea name="customer_address" id="customer_address" rows="5" cols="50" placeholder="Customer Address" required></textarea><br>
+    </div>
+
     <!-- Submit button -->
-<form method="post" action="order.php">
-    <button type="submit" name="submit_order" 
-            style="background-color: firebrick; color: white; border-radius: 10px; margin: 20px auto; display: grid;">
-            <h1 style="font-family: Sansita;">Submit Order</h2></button>
+    <div style="text-align: center; margin-top: 1rem;">
+    <input type="submit" value="Confirm Order" onclick="myFunction()"
+               style="background-color: firebrick; color: white; border-radius: 10px; font-family: Sansita; font-size: 40px; font-weight: 500; padding: 5px 5px 10px 5px;"
+               onmouseover="this.style.color='firebrick';
+                            this.style.backgroundColor='white';
+                            this.style.fontSize='2em';" 
+               onmouseout="this.style.color='white';
+                           this.style.backgroundColor='firebrick';
+                           this.style.fontSize='2em';">
+    </div>
+  <script>
+    function myFunction() {
+    var txt;
+    if (confirm("Do you confirm the order?")) {
+      txt = "You pressed Button!";
+    } else {
+      txt = "You pressed Cancel Button!";
+    }
+    document.getElementById("confirmation-box").innerHTML = txt;
+    }
+  </script>
+
 </form>
 </body>
 </html>
