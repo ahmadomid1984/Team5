@@ -70,7 +70,17 @@
                            this.style.backgroundColor='firebrick';
                            this.style.fontSize='1.5em';">
   </form>
-  
+  <script>
+    function myFunction() {
+    var txt;
+    if (confirm("Do you confirm the order?")) {
+      txt = "You pressed Button!";
+    } else {
+      txt = "You pressed Cancel Button!";
+    }
+    document.getElementById("confirmation-box").innerHTML = txt;
+    }
+  </script>
   </div>
 </body>
 </html>
