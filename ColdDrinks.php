@@ -120,4 +120,28 @@
                     ?></h1>
                 </div>
             </div>
-            
+            <div class="container10">
+                <img src="img/Cold/Peanut shake.jpg" alt="">
+                <div class="content">
+                    <h1 style="word-spacing: 10px; margin-bottom: 0px;">Peanut Shake - 5€
+                    <?php
+				    include 'db_connection.php'; 
+                    $sql = "SELECT id, name, price FROM products WHERE name = 'Peanut Shake'";
+				    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo '<input type="hidden" name="product_id[7]" value="' . $row["id"] . '">';
+                        echo '<input type="hidden" name="product_name[7]" value="' . $row["name"] . '">';
+                        echo '<input type="hidden" name="product_price[7]" value="' . $row["price"] . '">';
+                        echo '<input type="number" name="quantity[7]" value="0" min="0" style="width: 40px; height: 30px;"><br><br>';
+                    }
+				    $conn->close();
+                    ?></h1>
+                </div>
+            </div>
+            <div class="container10">
+                <img src="img/Cold/Pony shake.jpg" alt="">
+                <div class="content">
+                    <h1 style="word-spacing: 10px; margin-bottom: 0px;">Pony Shake - 10€
+                    <?php
+				    
