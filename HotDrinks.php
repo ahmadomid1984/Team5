@@ -120,3 +120,71 @@
                     ?></h1>
                 </div>
             </div>
+            <div class="container10">
+                <img src="img/Hot/Mocha.jpg" alt="">
+                <div class="content">
+                    <h1 style="word-spacing: 10px; margin-bottom: 0px;">Mocha - 7€
+                    <?php
+				    include 'db_connection.php'; 
+                    $sql = "SELECT id, name, price FROM products WHERE name = 'Mocha'";
+				    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo '<input type="hidden" name="product_id[7]" value="' . $row["id"] . '">';
+                        echo '<input type="hidden" name="product_name[7]" value="' . $row["name"] . '">';
+                        echo '<input type="hidden" name="product_price[7]" value="' . $row["price"] . '">';
+                        echo '<input type="number" name="quantity[7]" value="0" min="0" style="width: 40px; height: 30px;"><br><br>';
+                    }
+				    $conn->close();
+                    ?></h1>
+                </div>
+            </div>
+            <div class="container10">
+                <img src="img/Hot/Pistachio chokolate.jpg" alt="">
+                <div class="content">
+                    <h1 style="word-spacing: 10px; margin-bottom: 0px;">Pistachio Chocolate - 10€
+                    <?php
+				    include 'db_connection.php'; 
+                    $sql = "SELECT id, name, price FROM products WHERE name = 'Pistachio Chocolate'";
+				    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo '<input type="hidden" name="product_id[8]" value="' . $row["id"] . '">';
+                        echo '<input type="hidden" name="product_name[8]" value="' . $row["name"] . '">';
+                        echo '<input type="hidden" name="product_price[8]" value="' . $row["price"] . '">';
+                        echo '<input type="number" name="quantity[8]" value="0" min="0" style="width: 40px; height: 30px;"><br><br>';
+                    }
+				    $conn->close();
+                    ?></h1>
+                </div>
+            </div>
+            <div class="container10">
+                <img src="img/Hot/White chocolate.jpg" alt="">
+                <div class="content">
+                    <h1 style="word-spacing: 10px; margin-bottom: 0px;">White Chocolate - 4€
+                    <?php
+				    include 'db_connection.php'; 
+                    $sql = "SELECT id, name, price FROM products WHERE name = 'White Chocolate'";
+				    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo '<input type="hidden" name="product_id[9]" value="' . $row["id"] . '">';
+                        echo '<input type="hidden" name="product_name[9]" value="' . $row["name"] . '">';
+                        echo '<input type="hidden" name="product_price[9]" value="' . $row["price"] . '">';
+                        echo '<input type="number" name="quantity[9]" value="0" min="0" style="width: 40px; height: 30px;"><br><br>';
+                    }
+				    $conn->close();
+                    ?></h1>
+                </div>
+            </div>
+           </section>
+    </section>
+    <!-- Submit button -->
+<form method="post" action="order.php">
+    <button type="submit" name="submit_order" 
+            style="background-color: firebrick; color: white; border-radius: 10px; margin: 20px auto; display: grid;">
+            <h1 style="font-family: Sansita;">Submit Order</h2></button>
+</form>
+</body>
+</html>
+<?php include "./footer.php" ?>
