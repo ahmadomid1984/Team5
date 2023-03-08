@@ -1,6 +1,6 @@
 <?php include "./header.php" ?>
 
-<form action="order.php" method="post">
+<form action="order_confirmation.php" method="post">
 <section>
         <section class="grid-container">
             <div class="container10">
