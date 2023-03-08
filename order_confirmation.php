@@ -25,18 +25,24 @@
     }
 
 		// Get information from the previous page
-		$product_ids = $_POST['product_id'];
-		$product_names = $_POST['product_name'];
-		$product_prices = $_POST['product_price'];
-		$quantities = $_POST['quantity'];
+		$product_ids = isset($_POST['product_id']) ? $_POST['product_id'] : array();
+    $product_names = isset($_POST['product_name']) ? $_POST['product_name'] : array();
+    $product_prices = isset($_POST['product_price']) ? $_POST['product_price'] : array();
+    $quantities = isset($_POST['quantity']) ? $_POST['quantity'] : array();
 
 		// Calculate the total price
 		$total_price = 0;
-		for ($i = 0; $i < count($product_ids); $i++) {
+		for ($i = 1; $i < count($product_ids); $i++) {
 			if ($quantities[$i] > 0) {
 				$total_price += $product_prices[$i] * $quantities[$i];
 			}
 		}
+    $sql = "INSERT INTO orders (product_id, product_name, product_price, quantity, customer_phone) VALUES ('$product_ids[$i]', '$product_names[$i]', '$product_prices[$i]', '$quantities[$i]', '$customer_phone')";
+        if ($conn->query($sql) === TRUE) {
+          // information is inserted successfully
+        } else {
+          echo "Error: " . $sql . "<br>" . $conn->connect_error;
+        }
 
 		// order confirmation
 		echo "<p style='color: white; text-align: center; font-size: 25px;'><b>Thank you, " . $customer_name . ", for your order!</b></p>";
@@ -51,7 +57,7 @@
     echo "</tr>";
     echo "</thead>";
     echo "<tbody>";
-    for ($i = 0; $i < count($product_ids); $i++) {
+    for ($i = 1; $i < count($product_ids); $i++) {
         if ($quantities[$i] > 0) {
             $sub_total = $product_prices[$i] * $quantities[$i];
             echo "<tr>";
