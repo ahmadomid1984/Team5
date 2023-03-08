@@ -3,11 +3,14 @@
 $title = "Reading Data from the database";
 include 'db_connection.php';
 
-$sql = "SELECT * FROM customers";
+$sql = "SELECT c.id, c.name, c.phone, c.address, c.reg_date, GROUP_CONCAT(CONCAT(o.product_name, ' x', o.quantity)) AS orders 
+        FROM customers c 
+        LEFT JOIN orders o ON c.phone = o.customer_phone
+        GROUP BY c.id, c.name, c.phone, c.address, c.reg_date";
 $result = $conn->query($sql);
 
 if ($result === false) {
-  die("Error executing the query: " . $conn->connect_error);
+  die("Error executing the query: " . $conn->error);
 }
 
 if($result->num_rows > 0) {
@@ -28,30 +31,18 @@ if($result->num_rows > 0) {
           <th>name</th>
           <th>phone</th>
           <th>address</th>
+          <th>Orders</th>
           <th>reg_date</th>
         </tr>";
 
   while($row = $result ->fetch_assoc()){
-    // get orders for customer
-    $orders_sql = "SELECT * FROM orders WHERE id = " . $row['id'];
-    $orders_result = $conn->query($orders_sql);
-
-    // order details
-    $orders = "";
-    if ($orders_result->num_rows > 0) {
-      while($order_row = $orders_result->fetch_assoc()){
-        $orders .= $order_row['product_name'] . " (x" . $order_row['quantity'] . ")<br>";
-      }
-    } else {
-      $orders = "No orders found";
-    }
-
     echo "
       <tr>
         <td><a href='menu.php?id=$row[id]'>$row[id]</a></td>
         <td>$row[name]</td>
         <td>$row[phone]</td>
         <td>$row[address]</td>
+        <td>$row[orders]</td>
         <td>$row[reg_date]</td>
       </tr>
     ";
@@ -62,29 +53,6 @@ else {
   echo "NO Results";
 }
 
-$sql = "select * from orders";
-$result = $conn->query($sql);
-if($result->num_rows > 0) {
-    echo "<table class='table'>
-    <br><tr><th>ID</th><th>Product Name</th>
-          <th>Product price</th><th>Quantity</th></tr>";
-
-    while($row = $result ->fetch_assoc()){
-    echo "
-        <tr>
-        <td><a href='updatesingle.php?id=$row[id]'>$row[id]</a></td>
-        <td>$row[product_name]</td>
-        <td>$row[product_price]</td>
-        <td>$row[quantity]</td>
-        </tr>
-    ";
-    }
-    echo "</table>";
-}
-else
-    {
-        echo "NO Results";
-    }
 $conn->close();
 
 ?>
