@@ -82,4 +82,42 @@
                     ?></h1>
                 </div>
             </div>
+            <div class="container10">
+                <img src="img/Cold/Ice mocha.jpg" alt="">
+                <div class="content">
+                    <h1 style="word-spacing: 10px; margin-bottom: 0px;">Ice Mocha - 6€
+                    <?php
+				    include 'db_connection.php'; 
+                    $sql = "SELECT id, name, price FROM products WHERE name = 'Ice Mocha'";
+				    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo '<input type="hidden" name="product_id[5]" value="' . $row["id"] . '">';
+                        echo '<input type="hidden" name="product_name[5]" value="' . $row["name"] . '">';
+                        echo '<input type="hidden" name="product_price[5]" value="' . $row["price"] . '">';
+                        echo '<input type="number" name="quantity[5]" value="0" min="0" style="width: 40px; height: 30px;"><br><br>';
+                    }
+				    $conn->close();
+                    ?></h1>
+                </div>
+            </div>
+            <div class="container10">
+                <img src="img/Cold/Nutella shake.jpg" alt="">
+                <div class="content">
+                    <h1 style="word-spacing: 10px; margin-bottom: 0px;">Nutella Shake - 7€
+                    <?php
+				    include 'db_connection.php'; 
+                    $sql = "SELECT id, name, price FROM products WHERE name = 'Nutella Shake'";
+				    $result = $conn->query($sql);
+                    if ($result->num_rows > 0) {
+                        $row = $result->fetch_assoc();
+                        echo '<input type="hidden" name="product_id[6]" value="' . $row["id"] . '">';
+                        echo '<input type="hidden" name="product_name[6]" value="' . $row["name"] . '">';
+                        echo '<input type="hidden" name="product_price[6]" value="' . $row["price"] . '">';
+                        echo '<input type="number" name="quantity[6]" value="0" min="0" style="width: 40px; height: 30px;"><br><br>';
+                    }
+				    $conn->close();
+                    ?></h1>
+                </div>
+            </div>
             
