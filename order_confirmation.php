@@ -31,18 +31,18 @@
     $quantities = isset($_POST['quantity']) ? $_POST['quantity'] : array();
 
 		// Calculate the total price
-		$total_price = 0;
-		for ($i = 1; $i < count($product_ids); $i++) {
-			if ($quantities[$i] > 0) {
-				$total_price += $product_prices[$i] * $quantities[$i];
-			}
-		}
-    $sql = "INSERT INTO orders (product_id, product_name, product_price, quantity, customer_phone) VALUES ('$product_ids[$i]', '$product_names[$i]', '$product_prices[$i]', '$quantities[$i]', '$customer_phone')";
+    $total_price = 0;
+      for ($i = 1; $i < count($product_ids); $i++) {
+        if ($quantities[$i] > 0) {
+        $total_price += $product_prices[$i] * $quantities[$i];
+        $sql = "INSERT INTO orders (product_id, product_name, product_price, quantity, customer_phone) VALUES ('$product_ids[$i]', '$product_names[$i]', '$product_prices[$i]', '$quantities[$i]', '$customer_phone')";
         if ($conn->query($sql) === TRUE) {
-          // information is inserted successfully
+        // information is inserted successfully
         } else {
-          echo "Error: " . $sql . "<br>" . $conn->connect_error;
+        echo "Error: " . $sql . "<br>" . $conn->error;
         }
+    }
+  }
 
 		// order confirmation
 		echo "<p style='color: white; text-align: center; font-size: 25px;'><b>Thank you, " . $customer_name . ", for your order!</b></p>";
