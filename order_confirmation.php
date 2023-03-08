@@ -21,7 +21,7 @@
     if ($conn->query($sql) === TRUE) {
 	  echo "<b></b>";
     } else {
-	  echo "Error: " . $sql . "<br>" . $conn->connect_error;
+	  echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
 		// Get information from the previous page
