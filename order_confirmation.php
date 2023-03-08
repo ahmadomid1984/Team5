@@ -83,6 +83,9 @@
 		echo "<b style='color: font-family: Sansita; font-weight: 500; white; text-align: center; font-size: 20px;'>Address: " . $customer_address . "</b>";		
     echo "</div>";
 ?>
+<script type="text/javascript">  
+ alert("Your information has been recorded successfully");  
+</script>
 </div>
 </body>
 </html>
